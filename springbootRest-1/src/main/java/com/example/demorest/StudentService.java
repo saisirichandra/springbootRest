@@ -28,5 +28,9 @@ public class StudentService {
 		Student student=  students.stream().filter(s -> s.getId() == id ).findFirst().get();
 		return student;
 	}
+	public void addStudent(Student student) {
+		System.out.println("controllers add student");
+		students.add(student);
+	}
 
 }
