@@ -23,7 +23,7 @@ public class StudentService {
 		createStudents();
 		return students;
 	}
-	
+
 	public Student getStudent(int id) {
 		Student student=  students.stream().filter(s -> s.getId() == id ).findFirst().get();
 		return student;
@@ -32,5 +32,17 @@ public class StudentService {
 		System.out.println("controllers add student");
 		students.add(student);
 	}
+
+
+	public void updateStudent(Student student, int id) {
+		for(int i = 0; i< students.size(); i++) {
+			Student s = students.get(0);
+			if(s.getId() == id) {
+				students.set(id, student);
+				return;
+			}
+		}
+	}
+
 
 }

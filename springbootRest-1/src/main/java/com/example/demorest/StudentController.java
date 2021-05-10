@@ -33,5 +33,10 @@ public class StudentController {
 		System.out.println("controllers add student");
 		studentService.addStudent(student);
 	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value = "students/{id}")
+	public void updateStudent(@RequestBody Student student, @PathVariable int id) {
+		studentService.updateStudent(student,id);
+	}
 
 }
